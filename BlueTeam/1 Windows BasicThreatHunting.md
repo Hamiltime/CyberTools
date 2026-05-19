@@ -1,10 +1,10 @@
-#####Windows Basic Command Line Threat Hunting#####
-#Start with network connections and go from there
-
+# Windows Basic Command Line Threat Hunting
+#### Start with network connections and go from there
 netstat -anob
-#List connections and process ID/executable. Look for ESTABLISHED
 
+#List connections and process ID/executable. Look for ESTABLISHED
 netstat -f
+
 #Show resolved domains in connections
 
 tasklist /svc
