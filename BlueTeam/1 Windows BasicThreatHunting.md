@@ -1,76 +1,77 @@
 # Windows Basic Command Line Threat Hunting
-#### Start with network connections and go from there
+## Start with network connections and go from there
+
+#### List connections and process ID/executable. Look for ESTABLISHED
 netstat -anob
 
-#List connections and process ID/executable. Look for ESTABLISHED
+#### Show resolved domains in connections
 netstat -f
 
-#Show resolved domains in connections
-
+#### All executables and services associated - find what that svchost.exe actually is
 tasklist /svc
-#All executables and services associated - find what that svchost.exe actually is
 
+#### All executables and the .dll files associated
 tasklist /m
-#All executables and the .dll files associated
 
+#### list all executables that are running a specific .dll files
 tasklist /m <name>.dll 
-#list all executables that are running a specific .dll files
 
+#### List all .dll files for a specific executable
 tasklist /m /fi "pid eq <PID>"
-#List all .dll files for a specific executable
 
+#### Get command line that launched the process
 wmic process where processid=<PID> get commandline
-#Get command line that launched the process
 
-wmic process get name,parentprocessid,processid | find "<PID>"
-#See what spawned the process
+#### See what spawned the process
+`wmic process get name,parentprocessid,processid | find "<PID>"`
 
-#####Persistence and Auto-Start Extensibility Points (ASEPs)#####
-#Run Keys
+
+# Persistence and Auto-Start Extensibility Points (ASEPs)
+#### Run Keys
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
 
-#Shell Keys
+#### Shell Keys
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
 
-#Services Keys
+#### Services Keys
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServices
 
-#Policy Keys
+#### Policy Keys
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
 
-#Logged in user Keys
+#### Logged in user Keys
 HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows
 
-#Boot Key
+#### Boot Key
 By default, the multistring BootExecute value of the registry key HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager is set to autocheck autochk *. 
 This value causes Windows, at startup, to check the file-system integrity of the hard disks if the system has been shut down abnormally. 
 Adversaries can add other programs or processes to this registry value which will automatically launch at boot.
 
-#Startup Folders
+#### Startup Folders
 C:\Users\[Username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 
-#Drivers
+#### Drivers
 Windows Event Logs:
 Event ID 3000-3006: Logs metadata about driver signature validation.
 Event ID 2000-2011 (Windows Defender Application Control): Tracks driver integrity and policy enforcement.
 PowerShell: Use commands to retrieve metadata about installed drivers: Get-WindowsDriver -Online | Select-Object Driver, ProviderName, Version
 
-#Services
+#### Services
 
-#Scheduled Tasks
+#### Scheduled Tasks
 
-#####EVENT IDs#####
+## EVENT IDs
 4688 Security - CMD line in process creation events (logging needs to be enabled for this one)
 4624 Security - Successful Logon
 4625 Security - Failed Login
