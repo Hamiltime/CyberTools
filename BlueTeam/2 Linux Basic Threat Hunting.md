@@ -54,13 +54,23 @@ Google errors that you find
 
 ## LINUX LOGS
 `/var/log/messages` → Contains global system messages, including the messages that are logged during system startup
+
 `/var/log/auth.log` → Authentication logs
+
 `/var/log/kern.log` → Kernel information and events
+
 `/var/log/secure` → Authentication logs
+
 `/var/log/syslog` → Contains messages that are recorded by the host about the system activity
+
 `/var/log/httpd/` → Apache logs
+
 `/var/log/daemon.log` → Contains information about running system and application daemons
+
 `/var/log/cron` → Cron logs
+
 `/var/log/auditd/audit.log | grep denied` → Get SELinux alerts
+
 `/var/log/journal` → journald systemd's logs
+
 `journalctl --file X.journal -o verbose > journal.txt` → Dump journald logs with verbose output
