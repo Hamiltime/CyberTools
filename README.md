@@ -5,7 +5,7 @@ Not Started = ^
 
 ## BLUE TEAM TOOLS 
 
-1) Windows Basic Threat Hunting: Command line tips and what to look for  
+1) **Windows Basic Threat Hunting**: Command line tips and what to look for  
 3) Linux Basic Threat Hunting: Command line tips and what to look for  
 4) DeepBlueCLI: Search Windows event logs for suspicious or malicious events  
 5) AutoRuns: Analyze a Windows endpoint for malware or persistence  
