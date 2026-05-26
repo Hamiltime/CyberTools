@@ -69,20 +69,22 @@ IsGoLink: Indicates the use of the GoLink linker, which is less common and might
 (If you get cli_loaddbdir() error, this means clamscan needs to be updated. Run this command first: `freshclam`)
 `clamscan <FileName> --allmatch=no -v`
 
-#Use signsrch to see if there is an RSA key, which means the file is encrypted. This just verifies encryption is used
-signsrch <FileName>
+#### Use signsrch to see if there is an RSA key, which means the file is encrypted. This just verifies encryption is used
+`signsrch <FileName>`
 
-#We may be able to extract strings that are encoded with little endian
-strings --encoding=l <FileName>
+#### We may be able to extract strings that are encoded with little endian
+`strings --encoding=l <FileName>`
 
-#To extract the overlay of a PE file into a separate file using pecheck, you can run the command
-pecheck -g o -D <FileName> > sample.exe.test.overlay
-strings <FileName>.test.overlay | less
-strings --encoding=l <FileName>
-hexdump -C <FileName>.test.overlay | less
-#Note: “Overlay Extraction” refers to the process of isolating and extracting the overlay portion of a Portable Executable (PE) file. 
-#An overlay is any data appended to the end of a PE file after the actual executable content. 
-#This data is not part of the main executable sections and can contain various types of information, such as additional code, configuration data, or even malicious payloads.
+#### To extract the overlay of a PE file into a separate file using pecheck, you can run the command
+`pecheck -g o -D <FileName> > sample.exe.test.overlay`
+`strings <FileName>.test.overlay | less`
+`strings --encoding=l <FileName>`
+`hexdump -C <FileName>.test.overlay | less`
+Note: “Overlay Extraction” refers to the process of isolating and extracting the overlay portion of a Portable Executable (PE) file. 
+
+An overlay is any data appended to the end of a PE file after the actual executable content. 
+
+This data is not part of the main executable sections and can contain various types of information, such as additional code, configuration data, or even malicious payloads.
 
 #We can use the xorsearch tool for searching for any web traffic
 xorsearch <FileName> http
