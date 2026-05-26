@@ -2,25 +2,25 @@
 ## Start with network connections and go from there
 
 #### List connections and process ID/executable. Look for ESTABLISHED
-netstat -anob
+`netstat -anob`
 
 #### Show resolved domains in connections
-netstat -f
+`netstat -f`
 
 #### All executables and services associated - find what that svchost.exe actually is
-tasklist /svc
+`tasklist /svc`
 
 #### All executables and the .dll files associated
-tasklist /m
+`tasklist /m`
 
 #### list all executables that are running a specific .dll files
-tasklist /m <name>.dll 
+`tasklist /m <name>.dll`
 
 #### List all .dll files for a specific executable
-tasklist /m /fi "pid eq <PID>"
+`tasklist /m /fi "pid eq <PID>"`
 
 #### Get command line that launched the process
-wmic process where processid=<PID> get commandline
+`wmic process where processid=<PID> get commandline`
 
 #### See what spawned the process
 `wmic process get name,parentprocessid,processid | find "<PID>"`
