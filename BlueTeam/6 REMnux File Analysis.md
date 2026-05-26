@@ -8,6 +8,7 @@ Keep trying and use each tool to find clues about the EXE behavior.
 
 #### Basic Identificaiton
 `File <FileName>`
+
 More Identification
 `exiftool -a -u -g1 <FileName>`
 
