@@ -1,7 +1,5 @@
 
 # TABLE OF CONTENTS  
-Still in progress = *  
-Not Started = ^  
 
 ## BLUE TEAM TOOLS 
 
