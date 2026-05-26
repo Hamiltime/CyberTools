@@ -32,16 +32,27 @@ When the scan is completed, click File > Save and save the log file as a .arn fi
 Usage: `autorunsc [-a *] [-c|-ct] [-h] [-m] [-s] [-u] [-vt] [[-z ] | [user]]]`
 
 -c	Print output as CSV.
+
 -ct	Print output as tab-delimited values.
+
 -h	Show file hashes.
+
 -m	Hide Microsoft entries (signed entries if used with -v).
+
 -s	Verify digital signatures.
+
 -t	Show timestamps in normalized UTC (YYYYMMDD-hhmmss).
+
 -u	If VirusTotal check is enabled, show files that are unknown by VirusTotal or have non-zero detection, otherwise show only unsigned files.
+
 -x	Print output as XML.
+
 -v[rs]	Query VirusTotal for malware based on file hash. Add ‘r’ to open reports for files with non-zero detection. Files reported as not previously scanned will be uploaded to VirusTotal if the ‘s’ option is specified. Note scan results may not be available for five or more minutes.
+
 -vt	Before using VirusTotal features, you must accept the VirusTotal terms of service. If you haven’t accepted the terms and you omit this option, you will be interactively prompted.
+
 -z	Specifies the offline Windows system to scan.
+
 user	Specifies the name of the user account for which autorun items will be shown. Specify ‘*’ to scan all user profiles.
 
 EXAMPLE: autorunsc.exe -a * -s -c -h > autoruns_malware_report.csv
