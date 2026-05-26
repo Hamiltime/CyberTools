@@ -1,19 +1,19 @@
-
+# Autoruns
 Download:
 https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite?source=recommendations
 
-When Autoruns opens, press Esc to cancel the current scan.
-When looking for malware, it helps to be signed in as the user that got infected. If an admin account is signed in instead of the user, select User in the top menu, and select the correct user account.
-Select Options and tick Hide Microsoft Entries.
-#WARNING: DO NOT USE VIRUSTOTAL IF YOU ARE PARTICIPATING IN TRAINING EXERCISES SUCH AS TATANKA#
-Select Options > Scan Options, then tick Verify code signatures, Check VirusTotal.com and Submit Unknown Images.
-#WARNING: DO NOT USE VIRUSTOTAL IF YOU ARE PARTICIPATING IN TRAINING EXERCISES SUCH AS TATANKA#
-Press F5 to start a new scan.
+## When Autoruns opens, press Esc to cancel the current scan.
+1) When looking for malware, it helps to be signed in as the user that got infected. If an admin account is signed in instead of the user, select User in the top menu, and select the correct user account.
+2) Select Options and tick Hide Microsoft Entries.
+3) 
+# WARNING: DO NOT USE VIRUSTOTAL IF YOU ARE PARTICIPATING IN TRAINING EXERCISES SUCH AS TATANKA
+4) Select Options > Scan Options, then tick Verify code signatures, Check VirusTotal.com and Submit Unknown Images.
+5) Press F5 to start a new scan.
 
-If you wish to save the logs and view them on another system, you can perform the following:
+## If you wish to save the logs and view them on another system, you can perform the following:
 When the scan is completed, click File > Save and save the log file as a .arn file.
 
-As far as identifying new malware, the things to look out for are:
+## As far as identifying new malware, the things to look out for are:
 -No description
 -No publisher
 -Normally an executable file (.exe)
