@@ -30,7 +30,7 @@ More Identification
 #### Running yara-rules against a sample can help identify known malware families or characteristics based on predefined rules.
 `yara-rules <FileName>`
 
-Yara Rules Reference:
+`Yara Rules Reference:
 
 network_http: Indicates the presence of HTTP-related network functionality. The executable likely performs HTTP requests.
 
@@ -60,7 +60,7 @@ HasDigitalSignature: The executable has a digital signature, which could be legi
 
 HasModified_DOS_Message: The DOS stub message has been modified, which can be a sign of tampering or an attempt to avoid detection.
 
-IsGoLink: Indicates the use of the GoLink linker, which is less common and might suggest custom compilation.
+IsGoLink: Indicates the use of the GoLink linker, which is less common and might suggest custom compilation.`
 
 #### Attempt to unpack the exe to see if we can see whats inside
 `upx -d <FileName>`
