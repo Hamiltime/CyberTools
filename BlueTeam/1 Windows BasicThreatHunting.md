@@ -73,6 +73,7 @@ PowerShell: Use commands to retrieve metadata about installed drivers: Get-Windo
 
 ## EVENT IDs
 4688 Security - CMD line in process creation events (logging needs to be enabled for this one)
+
 4624 Security - Successful Logon
 4625 Security - Failed Login
 4720 Security - A user account was created
