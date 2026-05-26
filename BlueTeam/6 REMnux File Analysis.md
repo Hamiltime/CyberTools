@@ -11,11 +11,11 @@ Keep trying and use each tool to find clues about the EXE behavior.
 More Identification
 `exiftool -a -u -g1 <FileName>`
 
-#Search through Document or EXE and filter out meaningless small strings and noise
-strings -n 8 <FileName> 
+#### Search through Document or EXE and filter out meaningless small strings and noise
+`strings -n 8 <FileName>`
 
-#One of the more useful tools, the peframe tool is used to perform static analysis on “Windows PE (Portable Executable)” files to gather information about its characteristics, potential indicators of compromise, and other details that can aid in understanding its behavior.
-peframe <FileName>
+#### One of the more useful tools, the peframe tool is used to perform static analysis on “Windows PE (Portable Executable)” files to gather information about its characteristics, potential indicators of compromise, and other details that can aid in understanding its behavior.
+`peframe <FileName>`
 
 #We can collect similar evidence using the pecheck tool.
 pecheck <FileName>
