@@ -11,7 +11,11 @@ https://github.com/sans-blue-team/DeepBlueCLI
 1) Copy DeepBlueCLI-master directory to suspect machine
 2) open powershell and cd to location of DeepBlue.ps1
 3) run `Set-ExecutionPolicy unrestricted`
+
 `.\DeepBlue.ps1 -log security | Out-GridView`
+
 `.\DeepBlue.ps1 -log system | Out-GridView`
+
 `.\DeepBlue.ps1 -log application | Out-GridView`
+
 `.\DeepBlue.ps1 -log powershell | Out-GridView`
