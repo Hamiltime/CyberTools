@@ -1,15 +1,15 @@
-#####REMnux EXE Analysis#####
+# REMnux EXE Analysis
 
 File analysis is about finding clues and making assumptions, it is difficult to know exactly what the file is executing and many of these commands may not return useful information. 
 Keep trying and use each tool to find clues about the EXE behavior. 
 
-#Search through document
-strings <FileName> | grep -i <SearchTerm>
+#### Search through document
+`strings <FileName> | grep -i <SearchTerm>`
 
-#Basic Identificaiton
-File <FileName>
-#More Identification
-exiftool -a -u -g1 <FileName>
+#### Basic Identificaiton
+`File <FileName>`
+More Identification
+`exiftool -a -u -g1 <FileName>`
 
 #Search through Document or EXE and filter out meaningless small strings and noise
 strings -n 8 <FileName> 
