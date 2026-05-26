@@ -85,20 +85,20 @@ IsGoLink: Indicates the use of the GoLink linker, which is less common and might
 An overlay is any data appended to the end of a PE file after the actual executable content. 
 This data is not part of the main executable sections and can contain various types of information, such as additional code, configuration data, or even malicious payloads.**
 
-#We can use the xorsearch tool for searching for any web traffic
-xorsearch <FileName> http
+#### We can use the xorsearch tool for searching for any web traffic
+`xorsearch <FileName> http`
 
-#The brxor.py script can be used to search for and decode XOR-encoded strings within a binary.
-brxor.py <FileName>
+#### The brxor.py script can be used to search for and decode XOR-encoded strings within a binary.
+`brxor.py <FileName>`
 
-#The bbcrack tool extracts obfuscated data and attempts to crack it
-bbcrack <FileName>
+#### The bbcrack tool extracts obfuscated data and attempts to crack it
+`bbcrack <FileName>`
 
-#The floss tool is similar and designed to extract and decode obfuscated strings from malware binaries. Look for User-Agents, Registry items and HTTP protocols.
-floss --no=static <FileName>
+#### The floss tool is similar and designed to extract and decode obfuscated strings from malware binaries. Look for User-Agents, Registry items and HTTP protocols.
+`floss --no=static <FileName>`
 
-#The capa tool provides a detailed analysis of the file based on its capabilities and behavior.
-capa <FileName> -vv
+#### The capa tool provides a detailed analysis of the file based on its capabilities and behavior.
+`capa <FileName> -vv`
 
 
 
