@@ -73,20 +73,37 @@ PowerShell: Use commands to retrieve metadata about installed drivers: Get-Windo
 
 ## EVENT IDs
 4688 Security - CMD line in process creation events (logging needs to be enabled for this one)
+
 4624 Security - Successful Logon
+
 4625 Security - Failed Login
+
 4720 Security - A user account was created
+
 4728 Security - A member was added to a security-enabled global group
+
 4732 Security - A member was added to a security-enabled local group
+
 4756 Security - A user added to security enabled universal group
+
 4776 Security - Successful /Failed Account Authentication
+
 4778 Security - RDP reconnected
+
 4779 Security - RDP disconnected
+
 7030 System - Service Creation Errors
+
 7045 System - Service Creation
+
 4722 Security - A user account was enabled
+
 4724 Security - An attempt was made to reset an account's password
+
 4738 Security - A user account was changed
+
 4735 Security - A Security-enabled local group was changed
+
 4755 Security - A Security-enabled universal group was changed
+
 4697 Security - A service was installed
