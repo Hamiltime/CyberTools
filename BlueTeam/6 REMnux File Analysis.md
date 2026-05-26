@@ -27,41 +27,6 @@ More Identification
 #### TrID is a tool for identifying file types based on their binary signatures.
 `trid <FileName> -v`
 
-#### Running yara-rules against a sample can help identify known malware families or characteristics based on predefined rules.
-`yara-rules <FileName>`
-
-##### Yara Rules Reference:
-
-network_http: Indicates the presence of HTTP-related network functionality. The executable likely performs HTTP requests.
-
-win_registry: Suggests interactions with the Windows Registry, possibly for configuration or persistence.
-
-win_token: Indicates the use of Windows security tokens, potentially for privilege escalation or impersonation.
-
-win_files_operation: The executable performs file operations, such as reading, writing, or modifying files.
-
-Str_Win32_Wininet_Library: Indicates the use of the Wininet library, which provides functions for Internet client applications.
-
-Str_Win32_Internet_API: Confirms the use of Internet APIs, which supports network communications.
-
-Str_Win32_Http_API: Further confirms the use of HTTP APIs for network communications.
-
-ScanBox_Malware_Generic: Generic detection for ScanBox malware, indicating potential data exfiltration or reconnaissance activities.
-
-suspicious_packer_section: The executable contains sections typical of packed files, which can be used to obfuscate the payload.
-
-IsPE32: Confirms the file is a PE32 executable.
-
-IsWindowsGUI: Confirms the executable is a Windows GUI application.
-
-HasOverlay: The file contains overlay data, which may include appended data that is not part of the original program.
-
-HasDigitalSignature: The executable has a digital signature, which could be legitimate or maliciously altered.
-
-HasModified_DOS_Message: The DOS stub message has been modified, which can be a sign of tampering or an attempt to avoid detection.
-
-IsGoLink: Indicates the use of the GoLink linker, which is less common and might suggest custom compilation.
-
 #### Attempt to unpack the exe to see if we can see whats inside
 `upx -d <FileName>`
 
@@ -100,7 +65,40 @@ This data is not part of the main executable sections and can contain various ty
 #### The capa tool provides a detailed analysis of the file based on its capabilities and behavior.
 `capa <FileName> -vv`
 
+#### Running yara-rules against a sample can help identify known malware families or characteristics based on predefined rules.
+`yara-rules <FileName>`
 
+##### Yara Rules Reference:
+
+network_http: Indicates the presence of HTTP-related network functionality. The executable likely performs HTTP requests.
+
+win_registry: Suggests interactions with the Windows Registry, possibly for configuration or persistence.
+
+win_token: Indicates the use of Windows security tokens, potentially for privilege escalation or impersonation.
+
+win_files_operation: The executable performs file operations, such as reading, writing, or modifying files.
+
+Str_Win32_Wininet_Library: Indicates the use of the Wininet library, which provides functions for Internet client applications.
+
+Str_Win32_Internet_API: Confirms the use of Internet APIs, which supports network communications.
+
+Str_Win32_Http_API: Further confirms the use of HTTP APIs for network communications.
+
+ScanBox_Malware_Generic: Generic detection for ScanBox malware, indicating potential data exfiltration or reconnaissance activities.
+
+suspicious_packer_section: The executable contains sections typical of packed files, which can be used to obfuscate the payload.
+
+IsPE32: Confirms the file is a PE32 executable.
+
+IsWindowsGUI: Confirms the executable is a Windows GUI application.
+
+HasOverlay: The file contains overlay data, which may include appended data that is not part of the original program.
+
+HasDigitalSignature: The executable has a digital signature, which could be legitimate or maliciously altered.
+
+HasModified_DOS_Message: The DOS stub message has been modified, which can be a sign of tampering or an attempt to avoid detection.
+
+IsGoLink: Indicates the use of the GoLink linker, which is less common and might suggest custom compilation.
 
 
 
