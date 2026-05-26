@@ -18,41 +18,56 @@ More Identification
 #### One of the more useful tools, the peframe tool is used to perform static analysis on “Windows PE (Portable Executable)” files to gather information about its characteristics, potential indicators of compromise, and other details that can aid in understanding its behavior.
 `peframe <FileName>`
 
-#We can collect similar evidence using the pecheck tool.
-pecheck <FileName>
+#### We can collect similar evidence using the pecheck tool.
+`pecheck <FileName>`
 
-#We can collect strings as well from the exe
-pestr <FileName>
+#### We can collect strings as well from the exe
+`pestr <FileName>`
 
-#TrID is a tool for identifying file types based on their binary signatures.
-trid <FileName> -v
+#### TrID is a tool for identifying file types based on their binary signatures.
+`trid <FileName> -v`
 
-#Running yara-rules against a sample can help identify known malware families or characteristics based on predefined rules.
-yara-rules <FileName>
+#### Running yara-rules against a sample can help identify known malware families or characteristics based on predefined rules.
+`yara-rules <FileName>`
 
 Yara Rules Reference:
+
 network_http: Indicates the presence of HTTP-related network functionality. The executable likely performs HTTP requests.
+
 win_registry: Suggests interactions with the Windows Registry, possibly for configuration or persistence.
+
 win_token: Indicates the use of Windows security tokens, potentially for privilege escalation or impersonation.
+
 win_files_operation: The executable performs file operations, such as reading, writing, or modifying files.
+
 Str_Win32_Wininet_Library: Indicates the use of the Wininet library, which provides functions for Internet client applications.
+
 Str_Win32_Internet_API: Confirms the use of Internet APIs, which supports network communications.
+
 Str_Win32_Http_API: Further confirms the use of HTTP APIs for network communications.
+
 ScanBox_Malware_Generic: Generic detection for ScanBox malware, indicating potential data exfiltration or reconnaissance activities.
+
 suspicious_packer_section: The executable contains sections typical of packed files, which can be used to obfuscate the payload.
+
 IsPE32: Confirms the file is a PE32 executable.
+
 IsWindowsGUI: Confirms the executable is a Windows GUI application.
+
 HasOverlay: The file contains overlay data, which may include appended data that is not part of the original program.
+
 HasDigitalSignature: The executable has a digital signature, which could be legitimate or maliciously altered.
+
 HasModified_DOS_Message: The DOS stub message has been modified, which can be a sign of tampering or an attempt to avoid detection.
+
 IsGoLink: Indicates the use of the GoLink linker, which is less common and might suggest custom compilation.
 
-#Attempt to unpack the exe to see if we can see whats inside
-upx -d <FileName>
+#### Attempt to unpack the exe to see if we can see whats inside
+`upx -d <FileName>`
 
-#Scanning the file with clamscan can return additional information about the malware
-#If you get cli_loaddbdir() error, this means clamscan needs to be updated. Run this command first: freshclam
-clamscan <FileName> --allmatch=no -v
+#### Scanning the file with clamscan can return additional information about the malware
+(If you get cli_loaddbdir() error, this means clamscan needs to be updated. Run this command first: `freshclam`)
+`clamscan <FileName> --allmatch=no -v`
 
 #Use signsrch to see if there is an RSA key, which means the file is encrypted. This just verifies encryption is used
 signsrch <FileName>
